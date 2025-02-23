@@ -1,8 +1,6 @@
-public abstract class  Command {
+public interface Command {
 
+    String execute();
 
-
-
-
-
+    boolean exit();
 }
