@@ -1,7 +1,13 @@
-public class Main {
-    public static void main(String[] args) {
+import command.Movement;
 
-        System.out.println("a");
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+
+        Movement m = new Movement();
+        m.execute();
+
 
 
 

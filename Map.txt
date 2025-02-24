@@ -1,4 +1,4 @@
-Spawn portal;CeskySlavik;ZakletyLes;Horice;VymenaManzelek;ObradniSin;Prostreno
+Spawn;Portal;CeskySlavik;ZakletyLes;Horice;VymenaManzelek;ObradniSin;Prostreno
 Portal;Spawn
 CeskySlavik;Spawn
 ZakletyLes;Spawn

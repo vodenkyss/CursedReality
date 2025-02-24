@@ -1,5 +1,6 @@
+package World;
+
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
@@ -7,9 +8,12 @@ import java.util.HashMap;
 public class LoadMap {
     HashMap<String, Location> rooms = new HashMap<>();
 
+    private int start = 0;
+    private int currentPosition = start;
+
     Location spawnRoom;
 
-    void loadFromTxt(String filename) throws IOException {
+    public void loadFromTxt(String filename) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(filename));
         String line;
         while ((line = reader.readLine()) != null) {
@@ -30,7 +34,15 @@ public class LoadMap {
             }
         }
         reader.close();
+        spawnRoom = rooms.get("Spawn");
+    }
 
+    public Location getCurrentPosition(){
+        return rooms.get(currentPosition);
+    }
+
+    public Location getSpawnRoom() {
+        return spawnRoom;
     }
 
 }

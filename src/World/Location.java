@@ -1,3 +1,5 @@
+package World;
+
 import java.util.HashMap;
 
 public class Location {
@@ -18,5 +20,11 @@ public class Location {
         connections.put(roomName, room);
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public HashMap<String, Location> getConnections() {
+        return connections;
+    }
 }
