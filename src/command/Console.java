@@ -13,6 +13,8 @@ public class Console  {
 
     public void inicialization() throws IOException {
         map.put("jdi", new Movement());
+        map.put("konec", new Exit());
+        map.put("batoh", new Backpack());
 
     }
 
