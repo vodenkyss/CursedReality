@@ -29,7 +29,7 @@ public class Movement implements Command {
         }
 
         System.out.print("Kam chceš jít? ");
-        String direction = sc.next();
+        String direction = sc.next().toLowerCase();
 
         if (currentLocation == map.getSpawnRoom()) {
             if (map.getSpawnRoom().getConnections().containsKey(direction)) {
@@ -38,14 +38,14 @@ public class Movement implements Command {
             } else {
                 System.out.println("Tato místnost neexistuje.");
             }
-        } else if (direction.equals("Spawn")) {
+        } else if (direction.equals("spawn")) {
             currentLocation = map.getSpawnRoom();
             System.out.println("Vrátil ses na Spawn.");
         } else {
             System.out.println("Musíš se nejprve vrátit na Spawn, než půjdeš jinam.");
         }
 
-        return null;
+        return "Co budes delat dal?";
     }
 
     @Override

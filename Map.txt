@@ -1,8 +1,8 @@
-Spawn;Portal;CeskySlavik;ZakletyLes;Horice;VymenaManzelek;ObradniSin;Prostreno
-Portal;Spawn
-CeskySlavik;Spawn
-ZakletyLes;Spawn
-Horice;Spawn
-VymenaManzelek;Spawn
-ObradniSin;Spawn
-Prostreno;Spawn
+spawn;portal;ceskyslavik;zakletyles;horice;vymenamanzelek;obradnisin;prostreno
+portal;Spawn
+ceskyslavik;Spawn
+zakletyles;spawn
+horice;spawn
+vymenamanzelek;spawn
+obradnisin;spawn
+prostreno;spawn

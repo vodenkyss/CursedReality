@@ -34,7 +34,7 @@ public class LoadMap {
             }
         }
         reader.close();
-        spawnRoom = rooms.get("Spawn");
+        spawnRoom = rooms.get("spawn");
     }
 
     public Location getCurrentPosition(){
