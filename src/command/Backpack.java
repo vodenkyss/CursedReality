@@ -45,8 +45,19 @@ public class Backpack implements Command{
         return false;
     }
 
+    public Item getItem(String itemName) {
+        for (Item item : items) {
+            if (item.getName().equalsIgnoreCase(itemName)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
     @Override
     public boolean exit() {
         return false;
     }
+
+
 }

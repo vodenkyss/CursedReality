@@ -17,6 +17,7 @@ public class Console {
         map.put("batoh", new Backpack());
         map.put("vezmi", new PickUp());
         map.put("pomoc", new Help(map));
+        map.put("pouzij", new Use());
 
     }
 

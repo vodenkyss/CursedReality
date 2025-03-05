@@ -2,6 +2,7 @@ package command;
 
 import World.LoadMap;
 import World.Location;
+import World.Player;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -12,6 +13,8 @@ public class Movement implements Command {
     private Scanner sc = new Scanner(System.in);
     private LoadMap map = new LoadMap();
     private Location currentLocation;
+
+    Player player = new Player();
 
     public Movement() throws IOException {
         map.loadFromTxt("Map.txt");
