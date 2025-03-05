@@ -5,7 +5,7 @@ import command.Backpack;
 public class Player {
 
 
-    private LoadMap map = new LoadMap();
+
     private Backpack backpack= new Backpack();
     private Location currentLocation;
 

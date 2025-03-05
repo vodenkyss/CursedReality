@@ -23,7 +23,7 @@ public class Use implements Command  {
 
     @Override
     public String execute() throws IOException {
-        Item itemToUse = backpack.getItem(itemName); // Získání předmětu z batohu podle názvu
+        Item itemToUse = backpack.getItem(itemName);
 
         if (itemToUse != null) {
             //neco
