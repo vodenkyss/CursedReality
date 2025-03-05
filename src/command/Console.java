@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Console  {
+public class Console {
 
     private boolean exit = false;
     private HashMap<String, Command> map = new HashMap<>();
@@ -15,6 +15,8 @@ public class Console  {
         map.put("jdi", new Movement());
         map.put("konec", new Exit());
         map.put("batoh", new Backpack());
+        map.put("vezmi", new PickUp());
+        map.put("pomoc", new Help(map));
 
     }
 
@@ -23,10 +25,10 @@ public class Console  {
         String command = sc.nextLine();
         command = command.trim();
         command = command.toLowerCase();
-        if(map.containsKey(command)){
-            System.out.println(">> "+map.get(command).execute());
-        }else{
-            System.out.println(">> Nondefined command");
+        if (map.containsKey(command)) {
+            System.out.println(">> " + map.get(command).execute());
+        } else {
+            System.out.println(">> Cos to napsal? Zkus to znova..");
         }
     }
 
@@ -34,13 +36,21 @@ public class Console  {
         inicialization();
         //String text = Text.loadFile();
         //System.out.println(text);
-        try{
-            do{
+        try {
+            do {
                 doCommand();
-            }while(!exit);
-        }catch (Exception e){
+            } while (!exit);
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public String keys() {
+        for (int i = 0; i < map.size(); i++) {
+           return String.valueOf(map.get(i));
+
+        }
+        return null;
     }
 
 }
