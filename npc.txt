@@ -1,0 +1,8 @@
+spawn;null
+portal;null
+ceskyslavik;Jan Bendig
+zakletyles;Baba pod korenem
+horice;Svarta
+vymenamanzelek;Lucie
+obradnisin;Jirka Kara
+prostreno;Kuchar

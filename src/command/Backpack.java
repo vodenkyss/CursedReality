@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Backpack implements Command{
 
-    private ArrayList<Item>items = new ArrayList<Item>();
+    private ArrayList<Item>items = new ArrayList<>();
 
     Scanner sc = new Scanner(System.in);
 

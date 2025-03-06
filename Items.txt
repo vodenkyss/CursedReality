@@ -1,0 +1,8 @@
+spawn;null
+portal;null
+ceskyslavik;prsten
+zakletyles;mouka
+horice;poznamka
+vymenamanzelek;null
+obradnisin;null
+prostreno;houskovyknedlik

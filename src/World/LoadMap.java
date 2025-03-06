@@ -8,10 +8,8 @@ import java.util.HashMap;
 public class LoadMap {
     HashMap<String, Location> rooms = new HashMap<>();
 
-    private int start = 0;
-    private int currentPosition = start;
-
     Location spawnRoom;
+
 
     public void loadFromTxt(String filename) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(filename));
@@ -37,9 +35,26 @@ public class LoadMap {
         spawnRoom = rooms.get("spawn");
     }
 
-    public Location getCurrentPosition(){
-        return rooms.get(currentPosition);
+
+    public void loadItemFromTxt(String filename) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader("Items.txt"));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(";");
+            String roomName = parts[0];
+            String itemName = parts[1];
+
+            Location room = rooms.get(roomName);
+            if (room != null) {
+                Item item = new Item();
+                item.setName(itemName);
+                room.getItems().add(item);
+            }
+        }
+        reader.close();
     }
+
+
 
     public Location getSpawnRoom() {
         return spawnRoom;

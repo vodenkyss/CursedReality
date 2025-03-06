@@ -51,6 +51,10 @@ public class Movement implements Command {
         return "Co budes delat dal?";
     }
 
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
     @Override
     public boolean exit() {
         return false;
