@@ -45,6 +45,14 @@ public class Backpack implements Command{
         return false;
     }
 
+    public boolean hasItem(String itemName) {
+        for (Item item : items) {
+            if (item.getName().equals(itemName)) {
+                return true;
+            }
+        }
+        return false;
+    }
     public Item getItem(String itemName) {
         for (Item item : items) {
             if (item.getName().equalsIgnoreCase(itemName)) {

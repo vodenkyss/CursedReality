@@ -1,6 +1,6 @@
 spawn;portal;ceskyslavik;zakletyles;horice;vymenamanzelek;obradnisin;prostreno
-portal;Spawn
-ceskyslavik;Spawn
+portal;spawn
+ceskyslavik;spawn
 zakletyles;spawn
 horice;spawn
 vymenamanzelek;spawn
