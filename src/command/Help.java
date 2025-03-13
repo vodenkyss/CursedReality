@@ -15,11 +15,9 @@ public class Help implements Command{
     public String execute() throws IOException {
         StringBuilder helpMessage = new StringBuilder("Dostupné příkazy:\n");
 
-
         for (String command : commandMap.keySet()) {
             helpMessage.append("- ").append(command).append("\n");
         }
-
         return helpMessage.toString();
     }
 

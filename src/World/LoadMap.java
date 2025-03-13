@@ -11,7 +11,6 @@ public class LoadMap {
     Location spawnRoom;
 
 
-
     public void loadFromTxt(String filename) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(filename));
         String line;
@@ -52,28 +51,21 @@ public class LoadMap {
             String itemName = parts[1];
 
             Location room = rooms.get(roomName);
-            if (room != null&& itemName != null) {
-                System.out.println("Před přidáním: " + room);
+            if (room != null && itemName != null) {
+
                 Item item = new Item();
                 item.setName(itemName);
-                //room.getItems().add(item);
                 room.addItem(item);
-                System.out.println("Po přidání: " + room);
-
 
             }
-
-
         }
         reader.close();
     }
 
 
-
-
-
     public Location getSpawnRoom() {
         return spawnRoom;
     }
+
 
 }

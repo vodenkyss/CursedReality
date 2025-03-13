@@ -16,8 +16,6 @@ public class Console {
 
     private Player player;
 
-    private Location currentLocation;
-
     public Console(Player player, Backpack backpack) {
         this.backpack = backpack;
         this.player= player;
@@ -29,11 +27,10 @@ public class Console {
         map.put("jdi", new Movement(player));
         map.put("konec", new Exit());
         map.put("batoh", new Backpack());
-        map.put("vezmi", new PickUp(backpack,player.getCurrentLocation()));
+        map.put("vezmi", new PickUp(backpack,player));
         map.put("pomoc", new Help(map));
         map.put("pouzij", new Use());
         map.put("prozkoumej", new Look(player));
-
     }
 
     public void doCommand() throws IOException {
@@ -48,7 +45,6 @@ public class Console {
         } else {
             System.out.println(">> Cos to napsal? Zkus to znova..");
         }
-
     }
 
     public void start() throws IOException {

@@ -21,13 +21,14 @@ public class Game {
         //loadMap.loadItemFromTxt("Items.txt");
         player = new Player();
 
-
-
         Location spawnRoom= loadMap.getSpawnRoom();
+
         System.out.println("Před přiřazením: " + spawnRoom.getName());
 
         player.setCurrentLocation(spawnRoom);
         System.out.println("Po přiřazení: " + player.getCurrentLocation().getName());
+
+
 
     }
 

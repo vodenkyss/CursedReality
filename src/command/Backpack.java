@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Backpack implements Command{
 
-    private ArrayList<Item>items = new ArrayList<>();
+    ArrayList<Item>items = new ArrayList<>();
 
     Scanner sc = new Scanner(System.in);
 
@@ -17,13 +17,11 @@ public class Backpack implements Command{
         if(items.isEmpty()){
             return "nic tu neni!";
         }
-        System.out.println("co si prejes udelat?");
-        String thing = sc.next();
-        switch (thing){
-
-
+        else{
+            for (Item item: items){
+                System.out.println(item.getName());
+            }
         }
-
         return "batoh je zavreny";
     }
 
@@ -67,5 +65,10 @@ public class Backpack implements Command{
         return false;
     }
 
-
+    @Override
+    public String toString() {
+        return "Backpack{" +
+                "items=" + items +
+                '}';
+    }
 }

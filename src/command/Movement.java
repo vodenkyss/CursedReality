@@ -22,40 +22,7 @@ public class Movement implements Command {
         map.loadItemFromTxt("Items.txt");
 
     }
-/*
-    @Override
-    public String execute() throws IOException {
-        System.out.println("Aktuální pozice: " + player.getCurrentLocation().getName());
 
-        if (currentLocation == map.getSpawnRoom()) {
-            System.out.println("Odsud můžeš jít do: " + String.join(", ", map.getSpawnRoom().getConnections().keySet()));
-        } else {
-            System.out.println("Můžeš se vrátit pouze na Spawn.");
-        }
-
-        System.out.print("Kam chceš jít? ");
-        String direction = sc.next().toLowerCase();
-
-        if (currentLocation == map.getSpawnRoom()) {
-            if (map.getSpawnRoom().getConnections().containsKey(direction)) {
-                player.setCurrentLocation(new);
-                Location newLocation = getNewLocation(direction, currentLocation);
-                System.out.println("Přesunuto do: " + player.getCurrentLocation().getName());
-            } else {
-                System.out.println("Tato místnost neexistuje.");
-            }
-        } else if (direction.equals("spawn")) {
-            currentLocation = map.getSpawnRoom();
-            System.out.println("Vrátil ses na Spawn.");
-        } else {
-            System.out.println("Musíš se nejprve vrátit na Spawn, než půjdeš jinam.");
-        }
-
-        return "Co budes delat dal?";
-    }
-
-
- */
 
 
     @Override

@@ -23,19 +23,21 @@ public class PickUp implements Command {
     Scanner sc = new Scanner(System.in);
 
 
-    public PickUp(Backpack backpack, Location currentLocation) throws IOException {
-        this.backpack = backpack;
-        this.currentLocation= currentLocation;
+    public PickUp(Backpack backpack ,Player player) throws IOException {
+        this.backpack= backpack;
+        this.player=player;
     }
 
     @Override
     public String execute() throws IOException {
-
+        System.out.println("Co chces sebrat?");
         String itemName = sc.next().toLowerCase();
         if (player.getCurrentLocation().hasItem(itemName)) {
             Item item = player.getCurrentLocation().getItem(itemName);
+            player.
             backpack.addToBackpack(item);
-            player.getCurrentLocation().removeItem(itemName); // Odeberte item z místnosti
+            System.out.println(backpack.toString());
+            player.getCurrentLocation().removeItem(itemName);
             return "Sebral jsi item: " + itemName;
         } else {
             return "Item " + itemName + " není v této místnosti.";
