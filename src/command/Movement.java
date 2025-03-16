@@ -11,14 +11,14 @@ public class Movement implements Command {
 
 
     private Scanner sc = new Scanner(System.in);
-    private LoadMap map = new LoadMap();
+    private LoadMap map;
 
 
     private Player player;
 
-    public Movement(Player player) throws IOException {
+    public Movement(Player player, LoadMap map) throws IOException {
+        this.map=map;
         this.player = player;
-        map.loadFromTxt("Map.txt");
         map.loadItemFromTxt("Items.txt");
 
     }

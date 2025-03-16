@@ -1,5 +1,6 @@
 package command;
 
+import World.LoadMap;
 import World.Location;
 import World.Player;
 
@@ -16,17 +17,21 @@ public class Console {
 
     private Player player;
 
-    public Console(Player player, Backpack backpack) {
+    private LoadMap loadMap;
+
+    public Console(Player player, Backpack backpack, LoadMap loadMap) {
         this.backpack = backpack;
         this.player= player;
+        this.loadMap= loadMap;
     }
 
     Scanner sc = new Scanner(System.in);
 
     public void inicialization() throws IOException {
-        map.put("jdi", new Movement(player));
+        map.put("jdi", new Movement(player,loadMap));
         map.put("konec", new Exit());
-        map.put("batoh", new Backpack());
+        //map.put("batoh", new Backpack());
+        map.put("batoh", backpack);
         map.put("vezmi", new PickUp(backpack,player));
         map.put("pomoc", new Help(map));
         map.put("pouzij", new Use());

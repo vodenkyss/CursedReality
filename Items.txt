@@ -1,8 +1,8 @@
 spawn;null
 portal;null
-ceskyslavik;prsten
-zakletyles;mouka
-horice;poznamka
+ceskyslavik;prsten:ten asi nekdo ztratil cetou na svatbu..:0
+zakletyles;sekyra:pekne nabrousenej kousek:100;mouka:chleba asi pect nebudes:0
+horice;poznamka:asi je tam napsany neco fakt dulezity..:0
 vymenamanzelek;null
 obradnisin;null
-prostreno;houskovyknedlik
+prostreno;houskovyknedlik:je tvrdej jak sutr, tim do hlavy nechces dostat..50

@@ -33,7 +33,7 @@ public class Game {
     }
 
     public void startGame() throws IOException {
-        Console console = new Console(player,backpack);
+        Console console = new Console(player,backpack,loadMap);
         console.inicialization();
         console.start();
     }

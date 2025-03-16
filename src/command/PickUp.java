@@ -18,14 +18,12 @@ public class PickUp implements Command {
     private Player player;
 
 
-
-
     Scanner sc = new Scanner(System.in);
 
 
-    public PickUp(Backpack backpack ,Player player) throws IOException {
-        this.backpack= backpack;
-        this.player=player;
+    public PickUp(Backpack backpack, Player player) throws IOException {
+        this.backpack = backpack;
+        this.player = player;
     }
 
     @Override
@@ -34,7 +32,7 @@ public class PickUp implements Command {
         String itemName = sc.next().toLowerCase();
         if (player.getCurrentLocation().hasItem(itemName)) {
             Item item = player.getCurrentLocation().getItem(itemName);
-            player.
+
             backpack.addToBackpack(item);
             System.out.println(backpack.toString());
             player.getCurrentLocation().removeItem(itemName);

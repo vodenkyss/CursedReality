@@ -11,18 +11,46 @@ public class Backpack implements Command{
     ArrayList<Item>items = new ArrayList<>();
 
     Scanner sc = new Scanner(System.in);
-
+/*
     @Override
     public String execute() throws IOException {
-        if(items.isEmpty()){
+        if (items.isEmpty()) {
             return "nic tu neni!";
-        }
-        else{
-            for (Item item: items){
-                System.out.println(item.getName());
+        } else {
+            StringBuilder sb = new StringBuilder("V batohu máš:\n");
+            for (Item item : items) {
+                sb.append("- ").append(item.getName()).append("\n");
             }
+            return sb.toString();
         }
-        return "batoh je zavreny";
+    }
+
+ */
+
+    public String execute() {
+        System.out.print("Zadej název předmětu nebo nech prázdné pro zobrazení celého batohu: ");
+        String input = sc.nextLine().trim().toLowerCase();
+
+        if (input.isEmpty()) {
+            if (items.isEmpty()) {
+                return "Batoh je prázdný.";
+            } else {
+                StringBuilder sb = new StringBuilder("V batohu máš:\n");
+                for (Item item : items) {
+                    sb.append("- ").append(item.getName()).append("\n");
+                }
+                return sb.toString();
+            }
+        } else {
+            for (Item item : items) {
+                if (item.getName().equalsIgnoreCase(input)) {
+                    return "Informace o předmětu '" + item.getName() + "':\n" +
+                            "Popis: " + item.getDescription() + "\n" +
+                            "Damage: " + item.getDmg();
+                }
+            }
+            return "Předmět '" + input + "' v batohu není.";
+        }
     }
 
     public boolean addToBackpack(Item item){

@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Player {
 
 
-    public Backpack backpack= new Backpack();
+    //public Backpack backpack= new Backpack();
     private Location currentLocation;
 
     public Player() throws IOException {
