@@ -42,32 +42,7 @@ public class LoadMap {
     }
 
 
-    /*
-    public void loadItemFromTxt(String filename) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("Items.txt"));
-        String line;
-        while ((line = reader.readLine()) != null) {
-            String[] parts = line.split(";");
-            String roomName = parts[0];
 
-            Location room = rooms.get(roomName);
-            if (room != null) {
-                for (int i = 1; i < parts.length; i++) {
-                    String itemName = parts[i];
-                    if (itemName != null && !itemName.isEmpty()) {
-                        Item item = new Item();
-                        item.setName(itemName);
-                        room.addItem(item);
-                    }
-                }
-            } else {
-                System.out.println("Místnost '" + roomName + "' nebyla nalezena.");
-            }
-        }
-        reader.close();
-    }
-
-     */
 
     public void loadItemFromTxt(String filename) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(filename));
@@ -89,6 +64,34 @@ public class LoadMap {
                     item.setDmg(damage);
 
                     room.addItem(item);
+                }
+            } else {
+                System.out.println("Místnost '" + roomName + "' nebyla nalezena.");
+            }
+        }
+        reader.close();
+    }
+
+
+    public void loadNPCFromTxt(String filename) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(filename));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(";");
+            String roomName = parts[0];
+            Location room = rooms.get(roomName);
+            if (room != null) {
+                for (int i = 1; i < parts.length; i++) {
+                    String[] itemParts = parts[i].split(":", 3); // jméno, popis, hp
+                    String npcName = itemParts[0];
+                    String npcDescription = itemParts.length > 1 ? itemParts[1] : "Žádný popis";
+                    int hp = itemParts.length > 2 ? Integer.parseInt(itemParts[2]) : 0;
+
+                    NPC npc = new NPC();
+                    npc.setName(npcName);
+                    npc.setDescription(npcDescription);
+                    npc.setHP(hp);
+                    room.addNPC(npc);
                 }
             } else {
                 System.out.println("Místnost '" + roomName + "' nebyla nalezena.");

@@ -18,7 +18,8 @@ public class Game {
         backpack = new Backpack();
         loadMap = new LoadMap();
         loadMap.loadFromTxt("Map.txt");
-        //loadMap.loadItemFromTxt("Items.txt");
+        loadMap.loadItemFromTxt("Items.txt");
+        loadMap.loadNPCFromTxt("npc.txt");
         player = new Player();
 
         Location spawnRoom= loadMap.getSpawnRoom();

@@ -9,12 +9,17 @@ public class Location {
     private String name;
 
     ArrayList<Item> items= new ArrayList<>();
+    ArrayList<NPC> npcs= new ArrayList<>();
 
     HashMap<String, Location> connections = new HashMap<>();
 
 
     public ArrayList<Item> getItems() {
         return items;
+    }
+
+    public ArrayList<NPC> getNPCs(){
+        return npcs;
     }
 
 
@@ -60,8 +65,21 @@ public class Location {
         return null;
     }
 
+    public NPC getNPC(String npcName) {
+        for (NPC npc : npcs) {
+            if (npc.getName().equals(npcName)) {
+                return npc;
+            }
+        }
+        return null;
+    }
+
     public void addItem(Item item){
         items.add(item);
+    }
+
+    public void addNPC(NPC npc){
+        npcs.add(npc);
     }
 
     @Override

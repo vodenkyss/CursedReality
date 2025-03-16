@@ -2,6 +2,7 @@ package command;
 
 import World.Item;
 import World.Location;
+import World.NPC;
 import World.Player;
 
 import java.io.IOException;
@@ -25,6 +26,7 @@ public class Look implements Command{
         output.append("Nacházíš se v místnosti: ").append(currentLocation.getName()).append("\n");
         output.append("Itemy v místnosti:\n");
 
+
         if (currentLocation.getItems().isEmpty()) {
             output.append("Žádné itemy v této místnosti.\n");
         } else {
@@ -32,6 +34,16 @@ public class Look implements Command{
                 output.append("- ").append(item.getName()).append("\n");
             }
         }
+
+        output.append("Postavy v mistnosti:\n");
+        if (currentLocation.getNPCs().isEmpty()) {
+            output.append("Žádná postava v této místnosti.\n");
+        } else {
+            for (NPC npc : currentLocation.getNPCs()) {
+                output.append("- ").append(npc.getName()).append(": ").append(npc.getDescription()).append("\n");
+            }
+        }
+
 
         return output.toString();
     }

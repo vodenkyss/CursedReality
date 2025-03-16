@@ -30,7 +30,6 @@ public class Console {
     public void inicialization() throws IOException {
         map.put("jdi", new Movement(player,loadMap));
         map.put("konec", new Exit());
-        //map.put("batoh", new Backpack());
         map.put("batoh", backpack);
         map.put("vezmi", new PickUp(backpack,player));
         map.put("pomoc", new Help(map));

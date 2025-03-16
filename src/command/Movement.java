@@ -19,7 +19,8 @@ public class Movement implements Command {
     public Movement(Player player, LoadMap map) throws IOException {
         this.map=map;
         this.player = player;
-        map.loadItemFromTxt("Items.txt");
+        //map.loadItemFromTxt("Items.txt");
+        //map.loadNPCFromTxt("npc.txt");
 
     }
 
