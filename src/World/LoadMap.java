@@ -41,9 +41,6 @@ public class LoadMap {
 
     }
 
-
-
-
     public void loadItemFromTxt(String filename) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(filename));
         String line;
@@ -51,17 +48,32 @@ public class LoadMap {
             String[] parts = line.split(";");
             String roomName = parts[0];
             Location room = rooms.get(roomName);
+
             if (room != null) {
                 for (int i = 1; i < parts.length; i++) {
-                    String[] itemParts = parts[i].split(":", 3); // jméno, popis, damage
-                    String itemName = itemParts[0];
-                    String itemDescription = itemParts.length > 1 ? itemParts[1] : "Žádný popis";
-                    int damage = itemParts.length > 2 ? Integer.parseInt(itemParts[2]) : 0;
+                    if (parts[i].equals("null")) continue;
+
+                    String[] itemParts = parts[i].split(":", 5); // jméno, popis, dmg, usableLoc, vysledek
+
+                    String itemName = itemParts.length > 0 ? itemParts[0] : ""; // ternarni operatory mam naucene z internetu.
+                    String itemDescription = itemParts.length > 1 ? itemParts[1] : "";
+
+                    int damage = 0;
+                    try {
+                        damage = itemParts.length > 2 ? Integer.parseInt(itemParts[2].trim()) : 0;
+                    } catch (NumberFormatException e) {
+                        System.out.println("Chybný damage u itemu '" + itemName + "': " + itemParts[2]);
+                    }
+
+                    String usableLocation = itemParts.length > 3 ? itemParts[3] : null;
+                    String usableText = itemParts.length > 4 ? itemParts[4] : null;
 
                     Item item = new Item();
                     item.setName(itemName);
                     item.setDescription(itemDescription);
                     item.setDmg(damage);
+                    item.setUsableLocation(usableLocation);
+                    item.setUseActionResult(usableText);
 
                     room.addItem(item);
                 }
@@ -71,6 +83,8 @@ public class LoadMap {
         }
         reader.close();
     }
+
+
 
 
     public void loadNPCFromTxt(String filename) throws IOException {
@@ -99,6 +113,10 @@ public class LoadMap {
         }
         reader.close();
     }
+
+
+
+
 
 
     public Location getSpawnRoom() {

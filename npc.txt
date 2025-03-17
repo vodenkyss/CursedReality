@@ -1,7 +1,7 @@
 spawn;null
 portal;null
 ceskyslavik;Jan Bendig:Chysta se na cerveny koberec. Na jeho pritele si dej bacha, to myslim vazne..:100
-zakletyles;Baba pod korenem:Nemuze se dostat ven..;50
+zakletyles;Baba pod korenem:Nemuze se dostat ven..:50
 horice;Svarta:Ten uz se asi nevzbudi..;0
 vymenamanzelek;Lucie:Bacha na ni! Je agresivni:50
 obradnisin;Jirka Kara:Na svatbu se sice nejak dostal, ale prstynek nema.:75

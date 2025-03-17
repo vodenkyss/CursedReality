@@ -31,6 +31,7 @@ public class Movement implements Command {
        // Location currentLocation = player.getCurrentLocation();
 
         System.out.println("Aktuální pozice: " + player.getCurrentLocation().getName());
+        System.out.println("****************************");
 
         if (player.getCurrentLocation() == map.getSpawnRoom()) {
             System.out.println("Odsud můžeš jít do: " + String.join(", ", map.getSpawnRoom().getConnections().keySet()));
@@ -46,7 +47,6 @@ public class Movement implements Command {
                 Location newLocation = getNewLocation(direction, player.getCurrentLocation());
                 player.setCurrentLocation(newLocation);
                 System.out.println("Přesunuto do: " + player.getCurrentLocation().getName());
-                System.out.println(player.getCurrentLocation().getItems());
             } else {
                 System.out.println("Tato místnost neexistuje.");
             }

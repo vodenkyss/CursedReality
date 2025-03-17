@@ -40,7 +40,7 @@ public class Look implements Command{
             output.append("Žádná postava v této místnosti.\n");
         } else {
             for (NPC npc : currentLocation.getNPCs()) {
-                output.append("- ").append(npc.getName()).append(": ").append(npc.getDescription()).append("\n");
+                output.append("- ").append(npc.getName()).append(": ").append(npc.getDescription()).append("HP: " +npc.getHP()).append("\n");
             }
         }
 

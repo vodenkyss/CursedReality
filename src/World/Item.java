@@ -6,6 +6,10 @@ public class Item {
     private String description;
     private int dmg;
 
+    private String usableLocation;
+    private String useActionResult;
+
+
     public String getName() {
         return name;
     }
@@ -29,6 +33,23 @@ public class Item {
     public void setDmg(int dmg) {
         this.dmg = dmg;
     }
+
+    public String getUsableLocation() {
+        return usableLocation;
+    }
+
+    public void setUsableLocation(String usableInLocation) {
+        this.usableLocation = usableInLocation;
+    }
+
+    public String getUseActionResult() {
+        return useActionResult;
+    }
+
+    public void setUseActionResult(String useActionResult) {
+        this.useActionResult = useActionResult;
+    }
+
 
     @Override
     public String toString() {

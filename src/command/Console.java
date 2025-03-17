@@ -33,7 +33,7 @@ public class Console {
         map.put("batoh", backpack);
         map.put("vezmi", new PickUp(backpack,player));
         map.put("pomoc", new Help(map));
-        map.put("pouzij", new Use());
+        map.put("pouzij", new Use(backpack,player));
         map.put("prozkoumej", new Look(player));
     }
 

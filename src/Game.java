@@ -22,19 +22,15 @@ public class Game {
         loadMap.loadNPCFromTxt("npc.txt");
         player = new Player();
 
-        Location spawnRoom= loadMap.getSpawnRoom();
-
-        System.out.println("Před přiřazením: " + spawnRoom.getName());
+        Location spawnRoom = loadMap.getSpawnRoom();
 
         player.setCurrentLocation(spawnRoom);
-        System.out.println("Po přiřazení: " + player.getCurrentLocation().getName());
-
 
 
     }
 
     public void startGame() throws IOException {
-        Console console = new Console(player,backpack,loadMap);
+        Console console = new Console(player, backpack, loadMap);
         console.inicialization();
         console.start();
     }
