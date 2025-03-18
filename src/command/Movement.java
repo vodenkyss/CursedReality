@@ -26,7 +26,6 @@ public class Movement implements Command {
 
 
     public Location getNewLocation(String direction, Location currentLocation) {
-        //currentLocation=player.getCurrentLocation(); //zkouska
         Location newLocation = player.getCurrentLocation().getConnections().get(direction);
 
         if (newLocation != null) {
@@ -44,10 +43,10 @@ public class Movement implements Command {
         String spell = sc.nextLine().trim();
 
         if (spell.equalsIgnoreCase("Bizar konci svet se lame zpatky domu zmizte v jame")) {
-            System.out.println("Kouzlo bylo správně napsáno! Hra je splněna.");
+            System.out.println("🎇🎇Kouzlo bylo správně napsáno! Hra je splněna.🎇🎇");
             System.exit(0);
         } else {
-            System.out.println("Kouzlo neni spravne!! Jsi zpet na spawn");
+            System.out.println("❌❌Kouzlo neni spravne!! Jsi zpet na spawn❌❌");
             player.setCurrentLocation(map.getSpawnRoom());
         }
     }
@@ -113,12 +112,12 @@ public class Movement implements Command {
     }
 
     private void checkFoodInProstreno() {
-        System.out.print("Zadej název jídla, které chceš použít: ");
+        System.out.print("Zadej název jídla, které ti Karel uvařil: (pro pokracovani do mistnosti napis cokoli jineho) ");
         sc.nextLine();
         String foodName = sc.nextLine().trim();
 
         if (foodName.equalsIgnoreCase("koprovka")) {
-            System.out.println("Jídlo bylo správně zvoleno! Můžeš pokračovat.");
+            System.out.println("🟢🟢Jo fakt to byla koprovka! Můžeš pokračovat.🟢🟢");
 
             for (Item item : player.getCurrentLocation().getItems()) {
                 if (!item.isVisible()){
@@ -128,7 +127,7 @@ public class Movement implements Command {
 
             }
         } else {
-            System.out.println("Jídlo není správné! Zkus to znovu.");
+            System.out.println("❌❌Jídlo není správné! Zkus to znovu.❌❌");
         }
     }
 

@@ -29,7 +29,6 @@ public class PickUp implements Command {
             Item item = player.getCurrentLocation().getItem(itemName);
             if (item.isVisible()) {
                 player.getBackpack().addToBackpack(item);
-                System.out.println(player.getBackpack().toString());
                 player.getCurrentLocation().removeItem(itemName);
                 return "Sebral jsi item: " + itemName;
             } else {
