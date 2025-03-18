@@ -15,7 +15,7 @@ public class Game {
     private LoadMap loadMap;
     private Player player;
 
-    private Text text;
+
 
     public Game() throws IOException {
         backpack = new Backpack();
@@ -24,6 +24,7 @@ public class Game {
         loadMap.loadItemFromTxt("Items.txt");
         loadMap.loadNPCFromTxt("npc.txt");
         player = new Player();
+        player.setBackpack(backpack);
 
         Location spawnRoom = loadMap.getSpawnRoom();
 

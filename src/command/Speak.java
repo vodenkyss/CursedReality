@@ -40,7 +40,8 @@ public class Speak implements Command {
         String npcName = sc.nextLine().toLowerCase();
 
         if (player.getCurrentLocation().hasNpc(npcName)) {
-            NPC npc = player.getCurrentLocation().getNpc(npcName);
+           NPC npc = player.getCurrentLocation().getNpc(npcName);
+
             System.out.println(npcDialogues.get(npcName));
             return "Mluvíš s " + npcName + ".";
         } else {

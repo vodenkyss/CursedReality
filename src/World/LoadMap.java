@@ -53,7 +53,7 @@ public class LoadMap {
                 for (int i = 1; i < parts.length; i++) {
                     if (parts[i].equals("null")) continue;
 
-                    String[] itemParts = parts[i].split(":", 5); // jméno, popis, dmg, usableLoc, vysledek
+                    String[] itemParts = parts[i].split(":", 7); // jméno, popis, dmg, usableLoc, vysledek, viditelny, wasUsed
 
                     String itemName = itemParts.length > 0 ? itemParts[0] : ""; // ternarni operatory mam naucene z internetu.
                     String itemDescription = itemParts.length > 1 ? itemParts[1] : "";
@@ -67,6 +67,12 @@ public class LoadMap {
 
                     String usableLocation = itemParts.length > 3 ? itemParts[3] : null;
                     String usableText = itemParts.length > 4 ? itemParts[4] : null;
+                    boolean isVisible = itemParts.length > 5 && itemParts[5].equalsIgnoreCase("true");
+                    boolean wasUsed = itemParts.length>6 && itemParts[6].equalsIgnoreCase("true");
+                    String requiredItemUsed = itemParts.length > 7 ? itemParts[7] : null;
+
+
+
 
                     Item item = new Item();
                     item.setName(itemName);
@@ -74,7 +80,9 @@ public class LoadMap {
                     item.setDmg(damage);
                     item.setUsableLocation(usableLocation);
                     item.setUseActionResult(usableText);
-
+                    item.setVisible(isVisible);
+                    item.setWasUsed(wasUsed);
+                    item.setRequiredItemUsed(requiredItemUsed);
                     room.addItem(item);
                 }
             } else {

@@ -6,9 +6,22 @@ public class Item {
     private String description;
     private int dmg;
 
+    private boolean visible;
+
+    private boolean wasUsed;
+
     private String usableLocation;
     private String useActionResult;
 
+    private String requiredItemUsed;
+
+    public String getRequiredItemUsed() {
+        return requiredItemUsed;
+    }
+
+    public void setRequiredItemUsed(String requiredItemUsed) {
+        this.requiredItemUsed = requiredItemUsed;
+    }
 
     public String getName() {
         return name;
@@ -50,6 +63,22 @@ public class Item {
         this.useActionResult = useActionResult;
     }
 
+
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
+
+    public boolean isWasUsed() {
+        return wasUsed;
+    }
+
+    public void setWasUsed(boolean wasUsed) {
+        this.wasUsed = wasUsed;
+    }
 
     @Override
     public String toString() {

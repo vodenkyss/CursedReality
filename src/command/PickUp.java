@@ -10,10 +10,6 @@ import java.util.Scanner;
 
 public class PickUp implements Command {
 
-    private Backpack backpack;
-
-    private LoadMap map = new LoadMap();
-    private Location currentLocation;
 
     private Player player;
 
@@ -21,8 +17,7 @@ public class PickUp implements Command {
     Scanner sc = new Scanner(System.in);
 
 
-    public PickUp(Backpack backpack, Player player) throws IOException {
-        this.backpack = backpack;
+    public PickUp(Player player) throws IOException {
         this.player = player;
     }
 
@@ -32,11 +27,15 @@ public class PickUp implements Command {
         String itemName = sc.next().toLowerCase();
         if (player.getCurrentLocation().hasItem(itemName)) {
             Item item = player.getCurrentLocation().getItem(itemName);
+            if (item.isVisible()) {
+                player.getBackpack().addToBackpack(item);
+                System.out.println(player.getBackpack().toString());
+                player.getCurrentLocation().removeItem(itemName);
+                return "Sebral jsi item: " + itemName;
+            } else {
+                return "Tento item jeste nemuzes sebrat!";
 
-            backpack.addToBackpack(item);
-            System.out.println(backpack.toString());
-            player.getCurrentLocation().removeItem(itemName);
-            return "Sebral jsi item: " + itemName;
+            }
         } else {
             return "Item " + itemName + " není v této místnosti.";
         }

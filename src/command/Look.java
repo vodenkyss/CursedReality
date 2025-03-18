@@ -31,7 +31,7 @@ public class Look implements Command{
             output.append("Žádné itemy v této místnosti.\n");
         } else {
             for (Item item : currentLocation.getItems()) {
-                output.append("- ").append(item.getName()).append("\n");
+                output.append("- ").append(item.getName()).append(item.isWasUsed()).append("\n");
             }
         }
 

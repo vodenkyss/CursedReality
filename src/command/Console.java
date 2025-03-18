@@ -36,7 +36,7 @@ public class Console {
         map.put("jdi", new Movement(player,loadMap));
         map.put("konec", new Exit());
         map.put("batoh", backpack);
-        map.put("vezmi", new PickUp(backpack,player));
+        map.put("vezmi", new PickUp(player));
         map.put("pomoc", new Help(map));
         map.put("pouzij", new Use(backpack,player));
         map.put("prozkoumej", new Look(player));

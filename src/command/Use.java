@@ -36,6 +36,13 @@ public class Use implements Command {
 
         if (itemToUse.getUsableLocation() != null &&
                 itemToUse.getUsableLocation().equalsIgnoreCase(currentLocation.getName())) {
+            itemToUse.setWasUsed(true);
+            for (Item item : currentLocation.getItems()){
+                if (!item.isVisible()){
+                    item.setVisible(true);
+                    System.out.println(item.getName()+" byl odemcen");
+                }
+            }
             return itemToUse.getUseActionResult();
         }
 
