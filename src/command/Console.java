@@ -3,10 +3,13 @@ package command;
 import World.LoadMap;
 import World.Location;
 import World.Player;
+import World.Text;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
+
+import static World.Text.loadFile;
 
 public class Console {
 
@@ -18,6 +21,8 @@ public class Console {
     private Player player;
 
     private LoadMap loadMap;
+
+    private Text text;
 
     public Console(Player player, Backpack backpack, LoadMap loadMap) {
         this.backpack = backpack;
@@ -35,6 +40,7 @@ public class Console {
         map.put("pomoc", new Help(map));
         map.put("pouzij", new Use(backpack,player));
         map.put("prozkoumej", new Look(player));
+        map.put("mluv", new Speak(player));
     }
 
     public void doCommand() throws IOException {
@@ -53,8 +59,7 @@ public class Console {
 
     public void start() throws IOException {
         inicialization();
-        //String text = Text.loadFile();
-        //System.out.println(text);
+        loadFile();
         try {
             do {
                 doCommand();

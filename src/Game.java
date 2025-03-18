@@ -1,6 +1,7 @@
 import World.LoadMap;
 import World.Location;
 import World.Player;
+import World.Text;
 import command.Backpack;
 import command.Console;
 import command.Movement;
@@ -13,6 +14,8 @@ public class Game {
     private Backpack backpack;
     private LoadMap loadMap;
     private Player player;
+
+    private Text text;
 
     public Game() throws IOException {
         backpack = new Backpack();

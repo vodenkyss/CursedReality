@@ -82,6 +82,27 @@ public class Location {
         npcs.add(npc);
     }
 
+    public boolean hasNpc(String npcName) {
+        for (NPC npc : npcs) {
+            if (npc.getName().equalsIgnoreCase(npcName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public NPC getNpc(String npcName) {
+        for (NPC npc : npcs) {
+            if (npc.getName().equalsIgnoreCase(npcName)) {
+                return npc;
+            }
+        }
+        return null;
+    }
+
+
+
+
     @Override
     public String toString() {
         return "Location{" +

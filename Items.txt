@@ -1,8 +1,8 @@
 spawn;null
 portal;null
-ceskyslavik;prsten:ten asi nekdo ztratil cetou na svatbu..:0:obradnisin:Kamo to je fakt muj prsten pro starou!
+ceskyslavik;prsten:ten asi nekdo ztratil cetou na svatbu..:0:obradnisin:Kamo to je fakt muj prsten pro starou! Tady mas kus nejaky kraviny co ti mam rict : "svet se lame,"
 zakletyles;sekyra:pekne nabrousenej kousek:100:zakletyles:Jo to ten koren rozseklo!
 horice;poznamka:asi je tam napsany neco fakt dulezity..:0:null:Je tam napsano....
 vymenamanzelek;null
 obradnisin;null
-prostreno;houskovyknedlik:je tvrdej jak sutr, tim do hlavy nechces dostat..:50:vymenamanzelek:Jak jsem rikal, tim po hlave dostat neches. Omracil jsi Lucii.
+prostreno;houskovyknedlik:je tvrdej jak sutr, tim do hlavy nechces dostat..:50:vymenamanzelek:Jak jsem rikal, tim po hlave dostat neches. Omracil jsi Lucii. Nasel jsi u ni listecek kde je napsano : "Bizar konci"
