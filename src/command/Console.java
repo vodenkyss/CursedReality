@@ -51,7 +51,12 @@ public class Console {
         command = command.trim();
         command = command.toLowerCase();
         if (map.containsKey(command)) {
-            System.out.println(">> " + map.get(command).execute());
+            Command cm =map.get(command);
+            System.out.println(">> " +cm.execute());
+            if (cm.exit()){
+                exit=true;
+            }
+
         } else {
             System.out.println(">> Cos to napsal? Zkus to znova..");
         }

@@ -8,8 +8,8 @@ public class Location {
 
     private String name;
 
-    ArrayList<Item> items= new ArrayList<>();
-    ArrayList<NPC> npcs= new ArrayList<>();
+    private ArrayList<Item> items= new ArrayList<>();
+    private ArrayList<NPC> npcs= new ArrayList<>();
 
     HashMap<String, Location> connections = new HashMap<>();
 

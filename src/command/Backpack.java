@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 public class Backpack implements Command {
 
-    ArrayList<Item> items = new ArrayList<>();
+    private ArrayList<Item> items = new ArrayList<>();
 
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
 
     public String execute() {
         System.out.print("Zadej název předmětu nebo nech prázdné pro zobrazení celého batohu: ");

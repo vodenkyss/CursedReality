@@ -31,16 +31,16 @@ public class Look implements Command{
             output.append("Žádné itemy v této místnosti.\n");
         } else {
             for (Item item : currentLocation.getItems()) {
-                output.append("- ").append(item.getName()).append(item.isWasUsed()).append("\n");
+                output.append("- ").append(item.getName()).append("\n");
             }
         }
 
-        output.append("Postavy v mistnosti:\n");
+        output.append("Postavy v místnosti:\n");
         if (currentLocation.getNPCs().isEmpty()) {
             output.append("Žádná postava v této místnosti.\n");
         } else {
             for (NPC npc : currentLocation.getNPCs()) {
-                output.append("- ").append(npc.getName()).append(": ").append(npc.getDescription()).append("HP: " +npc.getHP()).append("\n");
+                output.append("- ").append(npc.getName()).append(": ").append(npc.getDescription()).append("HP: ").append(npc.getHP()).append("\n");
             }
         }
 

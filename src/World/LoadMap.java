@@ -6,12 +6,13 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class LoadMap {
-    HashMap<String, Location> rooms = new HashMap<>();
+    private HashMap<String, Location> rooms = new HashMap<>();
 
-    Location spawnRoom;
+    private Location spawnRoom;
 
 
     public void loadFromTxt(String filename) throws IOException {
+
         BufferedReader reader = new BufferedReader(new FileReader(filename));
         String line;
         while ((line = reader.readLine()) != null) {
@@ -70,8 +71,6 @@ public class LoadMap {
                     boolean isVisible = itemParts.length > 5 && itemParts[5].equalsIgnoreCase("true");
                     boolean wasUsed = itemParts.length>6 && itemParts[6].equalsIgnoreCase("true");
                     String requiredItemUsed = itemParts.length > 7 ? itemParts[7] : null;
-
-
 
 
                     Item item = new Item();

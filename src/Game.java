@@ -10,11 +10,9 @@ import java.io.IOException;
 
 public class Game {
 
-
     private Backpack backpack;
     private LoadMap loadMap;
     private Player player;
-
 
 
     public Game() throws IOException {
@@ -24,13 +22,10 @@ public class Game {
         loadMap.loadItemFromTxt("Items.txt");
         loadMap.loadNPCFromTxt("npc.txt");
         player = new Player();
+
         player.setBackpack(backpack);
-
         Location spawnRoom = loadMap.getSpawnRoom();
-
         player.setCurrentLocation(spawnRoom);
-
-
     }
 
     public void startGame() throws IOException {

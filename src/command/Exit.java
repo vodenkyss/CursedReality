@@ -6,7 +6,7 @@ public class Exit implements Command{
 
     @Override
     public String execute() throws IOException {
-        return "Konec";
+        return "Ukončuji hru...";
     }
 
     @Override

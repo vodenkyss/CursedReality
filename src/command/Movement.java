@@ -15,6 +15,7 @@ public class Movement implements Command {
     private LoadMap map;
 
 
+
     private Player player;
 
     public Movement(Player player, LoadMap map) throws IOException {
@@ -37,77 +38,73 @@ public class Movement implements Command {
     }
 
 
-    private void checkSpellForPortal() {
-        System.out.print("Zadej kouzlo pro vstup do portálu: ");
-        sc.nextLine();
-        String spell = sc.nextLine().trim();
 
-        if (spell.equalsIgnoreCase("Bizar konci svet se lame zpatky domu zmizte v jame")) {
-            System.out.println("🎇🎇Kouzlo bylo správně napsáno! Hra je splněna.🎇🎇");
-            System.exit(0);
-        } else {
-            System.out.println("❌❌Kouzlo neni spravne!! Jsi zpet na spawn❌❌");
-            player.setCurrentLocation(map.getSpawnRoom());
-        }
-    }
 
 
     @Override
     public String execute() throws IOException {
-        System.out.println("Aktuální pozice: " + player.getCurrentLocation().getName());
-        System.out.println("****************************");
+        try{
+            System.out.println("Aktuální pozice: " + player.getCurrentLocation().getName());
+            System.out.println("****************************");
 
-        if (player.getCurrentLocation() == map.getSpawnRoom()) {
-            System.out.println("Odsud můžeš jít do: " + String.join(", ", map.getSpawnRoom().getConnections().keySet()));
-        } else {
-            System.out.println("Můžeš se vrátit pouze na Spawn.");
-        }
+            if (player.getCurrentLocation() == map.getSpawnRoom()) {
+                System.out.println("Odsud můžeš jít do: " + String.join(", ", map.getSpawnRoom().getConnections().keySet()));
+            } else {
+                System.out.println("Můžeš se vrátit pouze na Spawn.");
+            }
 
-        System.out.print("Kam chceš jít? ");
-        String direction = sc.next().toLowerCase();
+            System.out.print("Kam chceš jít? ");
+            String direction = sc.next().toLowerCase();
 
-        switch (direction) {
-            case "portal":
-                if (player.getCurrentLocation() == map.getSpawnRoom()) {
-                    checkSpellForPortal();
-                } else {
-                    System.out.println("Musíš se nejprve vrátit na Spawn, než půjdeš do portálu.");
-                }
-                break;
+            switch (direction) {
+                case "portal":
+                    if (player.getCurrentLocation() == map.getSpawnRoom()) {
+                        checkSpellForPortal();
+                    } else {
+                        System.out.println("Musíš se nejprve vrátit na Spawn, než půjdeš do portálu.");
+                    }
+                    break;
 
-            case "spawn":
-                player.setCurrentLocation(map.getSpawnRoom());
-                System.out.println("Vrátil ses na Spawn.");
-                break;
+                case "spawn":
+                    player.setCurrentLocation(map.getSpawnRoom());
+                    System.out.println("Vrátil ses na Spawn.");
+                    break;
 
-            case "prostreno":
-                if (player.getCurrentLocation() == map.getSpawnRoom() && map.getSpawnRoom().getConnections().containsKey("prostreno")) {
-                    Location newLocation = getNewLocation("prostreno", player.getCurrentLocation());
-                    player.setCurrentLocation(newLocation);
-                    System.out.println("Přesunuto do: " + player.getCurrentLocation().getName());
-                    checkFoodInProstreno();
-                } else {
-                    System.out.println("Musíš se nejprve vrátit na Spawn, než půjdeš do prostreno.");
-                }
-                break;
-
-
-            default:
-                if (player.getCurrentLocation() == map.getSpawnRoom()) {
-                    if (map.getSpawnRoom().getConnections().containsKey(direction)) {
-                        Location newLocation = getNewLocation(direction, player.getCurrentLocation());
+                case "prostreno":
+                    if (player.getCurrentLocation() == map.getSpawnRoom() && map.getSpawnRoom().getConnections().containsKey("prostreno")) {
+                        Location newLocation = getNewLocation("prostreno", player.getCurrentLocation());
                         player.setCurrentLocation(newLocation);
                         System.out.println("Přesunuto do: " + player.getCurrentLocation().getName());
+                        checkFoodInProstreno();
                     } else {
-                        System.out.println("Tato místnost neexistuje.");
+                        System.out.println("Musíš se nejprve vrátit na Spawn, než půjdeš do prostreno.");
                     }
-                } else {
-                    System.out.println("Musíš se nejprve vrátit na Spawn, než půjdeš jinam.");
-                }
-                break;
+                    break;
+
+
+                default:
+                    if (player.getCurrentLocation() == map.getSpawnRoom()) {
+                        if (map.getSpawnRoom().getConnections().containsKey(direction)) {
+                            Location newLocation = getNewLocation(direction, player.getCurrentLocation());
+                            player.setCurrentLocation(newLocation);
+                            System.out.println("Přesunuto do: " + player.getCurrentLocation().getName());
+                        } else {
+                            System.out.println("Tato místnost neexistuje.");
+                        }
+                    } else {
+                        System.out.println("Musíš se nejprve vrátit na Spawn, než půjdeš jinam.");
+                    }
+                    break;
+            }
+
+
+
+        }catch(NullPointerException e){
+            System.out.println("Neco neni spravne inicializovano! "+ e.getMessage());
+
+        }catch (Exception e){
+            System.out.println("Nastala chyba: "+e.getMessage());
         }
-
-
         return "Co budes delat dal?";
     }
 
@@ -131,7 +128,19 @@ public class Movement implements Command {
         }
     }
 
+    private void checkSpellForPortal() {
+        System.out.print("Zadej kouzlo pro vstup do portálu: ");
+        sc.nextLine();
+        String spell = sc.nextLine().trim();
 
+        if (spell.equalsIgnoreCase("Bizar konci svet se lame zpatky domu zmizte v jame")) {
+            System.out.println("🎇🎇Kouzlo bylo správně napsáno! Konečně z toho blázince utečeš... Hra je splněna!🎇🎇");
+            System.exit(0);
+        } else {
+            System.out.println("❌❌Kouzlo není spravně!! Jsi zpět na spawnu❌❌");
+            player.setCurrentLocation(map.getSpawnRoom());
+        }
+    }
     @Override
     public boolean exit() {
         return false;
