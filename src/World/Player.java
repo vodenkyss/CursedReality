@@ -5,6 +5,9 @@ import command.Movement;
 
 import java.io.IOException;
 
+/**
+ * Class with player declaration.
+ */
 public class Player {
 
 

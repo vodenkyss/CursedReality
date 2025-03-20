@@ -22,6 +22,11 @@ public class Use implements Command {
     public Use() {
     }
 
+    /**
+     * Method that solves which item you want to add to backpack.
+     * Checks if you can use this item in your location
+     * @return what happened after usage
+     */
     @Override
     public String execute() {
         System.out.println("Co chceš použít?");
@@ -40,7 +45,7 @@ public class Use implements Command {
             for (Item item : currentLocation.getItems()){
                 if (!item.isVisible()){
                     item.setVisible(true);
-                    System.out.println(item.getName()+" byl odemcen");
+                    System.out.println(item.getName()+" byl(a) odemcen");
                 }
             }
             return itemToUse.getUseActionResult();

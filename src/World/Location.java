@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Class for declaration of location.
+ */
 public class Location {
 
     private String name;
@@ -31,10 +34,20 @@ public class Location {
         this.name = name;
     }
 
+    /**
+     * Connects room with the accessible rooms.
+     * @param roomName
+     * @param room
+     */
     void connect(String roomName, Location room) {
         connections.put(roomName, room);
     }
 
+    /**
+     * Checks if the location contains item
+     * @param itemName
+     * @return true or false
+     */
     public boolean hasItem(String itemName) {
         for (Item item : items) {
             if (item.getName().equals(itemName)) {
@@ -56,6 +69,11 @@ public class Location {
         return connections;
     }
 
+    /**
+     * Gets item from the room
+     * @param itemName
+     * @return item
+     */
     public Item getItem(String itemName) {
         for (Item item : items) {
             if (item.getName().equals(itemName)) {

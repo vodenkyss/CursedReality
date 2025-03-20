@@ -8,6 +8,9 @@ import World.Player;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Class for moving between rooms.
+ */
 public class Movement implements Command {
 
 
@@ -26,6 +29,12 @@ public class Movement implements Command {
     }
 
 
+    /**
+     * Method to get new Location when moving.
+     * @param direction
+     * @param currentLocation
+     * @return
+     */
     public Location getNewLocation(String direction, Location currentLocation) {
         Location newLocation = player.getCurrentLocation().getConnections().get(direction);
 
@@ -81,7 +90,6 @@ public class Movement implements Command {
                     }
                     break;
 
-
                 default:
                     if (player.getCurrentLocation() == map.getSpawnRoom()) {
                         if (map.getSpawnRoom().getConnections().containsKey(direction)) {
@@ -108,6 +116,9 @@ public class Movement implements Command {
         return "Co budes delat dal?";
     }
 
+    /**
+     * Method for checking right food name.
+     */
     private void checkFoodInProstreno() {
         System.out.print("Zadej název jídla, které ti Karel uvařil: (pro pokracovani do mistnosti napis cokoli jineho) ");
         sc.nextLine();
@@ -127,6 +138,10 @@ public class Movement implements Command {
             System.out.println("❌❌Jídlo není správné! Zkus to znovu.❌❌");
         }
     }
+
+    /**
+     * Mathod for checking spell to finish the game.
+     */
 
     private void checkSpellForPortal() {
         System.out.print("Zadej kouzlo pro vstup do portálu: ");

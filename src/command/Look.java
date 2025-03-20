@@ -7,6 +7,9 @@ import World.Player;
 
 import java.io.IOException;
 
+/**
+ * Class that inspects the room.
+ */
 public class Look implements Command{
 
 
@@ -16,6 +19,15 @@ public class Look implements Command{
         this.player = player;
     }
 
+    /**
+     * Executes the command to inspect the player's current location.
+     * Returns a detailed description of the current room, including its name,
+     * a list of items present, and any NPCs (non-player characters) in the room
+     * along with their descriptions and health points (HP).
+     * @return a string with the description of the room, items, and NPCs,
+     * or an error message if the current location is not set.
+     * @throws IOException
+     */
     @Override
     public String execute() throws IOException {
         if (player.getCurrentLocation() == null) {
@@ -25,7 +37,6 @@ public class Look implements Command{
         StringBuilder output = new StringBuilder();
         output.append("Nacházíš se v místnosti: ").append(currentLocation.getName()).append("\n");
         output.append("Itemy v místnosti:\n");
-
 
         if (currentLocation.getItems().isEmpty()) {
             output.append("Žádné itemy v této místnosti.\n");

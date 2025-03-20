@@ -11,6 +11,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ * Class for loading and solving communication with npc
+ */
+
 public class Speak implements Command {
 
     private Player player;
@@ -22,6 +26,11 @@ public class Speak implements Command {
         loadDialogues("dialogues.txt");
     }
 
+    /**
+     * Method for readinf text file with dialogues
+     * @param filename name of the text file
+     * @throws IOException
+     */
     private void loadDialogues(String filename) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(filename));
         String line;
@@ -34,6 +43,10 @@ public class Speak implements Command {
         reader.close();
     }
 
+    /**
+     * Method for communication with npc
+     * @return npc dialogue
+     */
     @Override
     public String execute() {
         System.out.println("S kým chceš mluvit?");
@@ -42,8 +55,9 @@ public class Speak implements Command {
         if (player.getCurrentLocation().hasNpc(npcName)) {
            NPC npc = player.getCurrentLocation().getNpc(npcName);
 
-            System.out.println(npcDialogues.get(npcName));
-            return "Mluvíš s " + npcName + ".";
+            System.out.println("Mluvis s: "+ npc.getName());
+
+            return npcDialogues.get(npcName);
         } else {
             return "Nikdo jménem " + npcName + " tu není."+ "Nebo si zkontroluj zda oslovujes spravnym jmenem!";
         }

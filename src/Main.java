@@ -15,18 +15,5 @@ public class Main {
         }catch (Exception e){
             System.out.println("Nastala chyba: "+ e.getMessage());
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

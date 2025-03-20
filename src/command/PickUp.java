@@ -8,6 +8,10 @@ import World.Player;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Class for picking up items from rooms.
+ */
+
 public class PickUp implements Command {
 
 
@@ -21,6 +25,12 @@ public class PickUp implements Command {
         this.player = player;
     }
 
+    /**
+     * Executes the command to pick up an item from the player's current location.
+     * Prompts the player to enter the name of the item they want to collect.
+     * @return which item you picked up
+     * @throws IOException
+     */
     @Override
     public String execute() throws IOException {
         System.out.println("Co chceš sebrat?");

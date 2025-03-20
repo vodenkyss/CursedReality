@@ -11,6 +11,10 @@ public class Backpack implements Command {
 
     private Scanner sc = new Scanner(System.in);
 
+    /**
+     * Method that shows you your backpack.
+     * @return
+     */
     public String execute() {
         System.out.print("Zadej název předmětu nebo nech prázdné pro zobrazení celého batohu: ");
         String input = sc.nextLine().trim().toLowerCase();

@@ -6,6 +6,9 @@ import java.io.IOException;
 
 public class Text {
 
+    /**
+     * Method for reading text file.
+     */
     public static void loadFile(){
         try(BufferedReader br = new BufferedReader(new FileReader("Text.txt"))) {
             String line;

@@ -11,6 +11,11 @@ public class Help implements Command{
         this.commandMap = commandMap;
     }
 
+    /**
+     * Method that shows your
+     * @return
+     * @throws IOException
+     */
     @Override
     public String execute() throws IOException {
         StringBuilder helpMessage = new StringBuilder("Dostupné příkazy:\n");
