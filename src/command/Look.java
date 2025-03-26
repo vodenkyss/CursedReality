@@ -54,8 +54,6 @@ public class Look implements Command{
                 output.append("- ").append(npc.getName()).append(": ").append(npc.getDescription()).append("HP: ").append(npc.getHP()).append("\n");
             }
         }
-
-
         return output.toString();
     }
 

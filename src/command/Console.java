@@ -43,6 +43,10 @@ public class Console {
         map.put("mluv", new Speak(player));
     }
 
+    /**
+     * Method for executing player's command
+     * @throws IOException
+     */
     public void doCommand() throws IOException {
         Location currentLocation = player.getCurrentLocation();
         System.out.println("Aktuální pozice: " + currentLocation.getName());
@@ -62,6 +66,10 @@ public class Console {
         }
     }
 
+    /**
+     * Method that starts the command loop
+     * @throws IOException
+     */
     public void start() throws IOException {
         inicialization();
         loadFile();

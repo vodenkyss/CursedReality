@@ -47,9 +47,11 @@ public class Movement implements Command {
     }
 
 
-
-
-
+    /**
+     * Method with main logic for moving between rooms
+     * Checks current location and connections between rooms
+     * @throws IOException
+     */
     @Override
     public String execute() throws IOException {
         try{

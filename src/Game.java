@@ -28,6 +28,10 @@ public class Game {
         player.setCurrentLocation(spawnRoom);
     }
 
+    /**
+     * Main loop of the game
+     * @throws IOException
+     */
     public void startGame() throws IOException {
         Console console = new Console(player, backpack, loadMap);
         console.inicialization();

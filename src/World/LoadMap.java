@@ -11,6 +11,11 @@ public class LoadMap {
     private Location spawnRoom;
 
 
+    /**
+     * Loading locations and setting connections from text file
+     * @param filename
+     * @throws IOException
+     */
     public void loadFromTxt(String filename) throws IOException {
 
         BufferedReader reader = new BufferedReader(new FileReader(filename));
@@ -42,6 +47,11 @@ public class LoadMap {
 
     }
 
+    /**
+     * Loading items in their location from text file
+     * @param filename
+     * @throws IOException
+     */
     public void loadItemFromTxt(String filename) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(filename));
         String line;
@@ -92,8 +102,13 @@ public class LoadMap {
     }
 
 
-
-
+    /**
+     * Loading npc in their location
+     * Loading from text file
+     *
+     * @param filename
+     * @throws IOException
+     */
     public void loadNPCFromTxt(String filename) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(filename));
         String line;

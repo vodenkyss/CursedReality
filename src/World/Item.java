@@ -19,6 +19,13 @@ public class Item {
         return requiredItemUsed;
     }
 
+    public Item(String name) {
+        this.name = name;
+    }
+
+    public Item() {
+    }
+
     public void setRequiredItemUsed(String requiredItemUsed) {
         this.requiredItemUsed = requiredItemUsed;
     }

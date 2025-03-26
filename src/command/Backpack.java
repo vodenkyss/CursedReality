@@ -13,7 +13,8 @@ public class Backpack implements Command {
 
     /**
      * Method that shows you your backpack.
-     * @return
+     * Checks if backpack is not empty
+     * @return String of items in backpack or Item and its description
      */
     public String execute() {
         System.out.print("Zadej název předmětu nebo nech prázdné pro zobrazení celého batohu: ");
@@ -41,6 +42,10 @@ public class Backpack implements Command {
         }
     }
 
+    /**
+     * Method that gives item to backpack if not null
+     * @param item
+     */
     public void addToBackpack(Item item) {
         if (item != null) {
             items.add(item);

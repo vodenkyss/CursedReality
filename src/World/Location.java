@@ -30,7 +30,7 @@ public class Location {
     }
 
 
-    Location(String name) throws IOException {
+    public Location(String name) throws IOException {
         this.name = name;
     }
 
@@ -83,14 +83,7 @@ public class Location {
         return null;
     }
 
-    public NPC getNPC(String npcName) {
-        for (NPC npc : npcs) {
-            if (npc.getName().equals(npcName)) {
-                return npc;
-            }
-        }
-        return null;
-    }
+
 
     public void addItem(Item item){
         items.add(item);

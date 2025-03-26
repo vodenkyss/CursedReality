@@ -12,8 +12,8 @@ public class Help implements Command{
     }
 
     /**
-     * Method that shows your
-     * @return
+     * Method that shows your commands
+     * @return String of available commands
      * @throws IOException
      */
     @Override

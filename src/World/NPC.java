@@ -29,4 +29,13 @@ public class NPC {
     public void setHP(int HP) {
         this.HP = HP;
     }
+
+    public NPC() {
+    }
+
+    public NPC(String name, String description, int HP) {
+        this.name = name;
+        this.description = description;
+        this.HP = HP;
+    }
 }
