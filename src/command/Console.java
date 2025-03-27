@@ -32,6 +32,10 @@ public class Console {
 
     Scanner sc = new Scanner(System.in);
 
+    /**
+     * connects keywords with command
+     * @throws IOException
+     */
     public void inicialization() throws IOException {
         map.put("jdi", new Movement(player,loadMap));
         map.put("konec", new Exit());

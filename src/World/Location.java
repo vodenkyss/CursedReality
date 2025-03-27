@@ -36,8 +36,8 @@ public class Location {
 
     /**
      * Connects room with the accessible rooms.
-     * @param roomName
-     * @param room
+     * @param roomName name of the room
+     * @param room location
      */
     void connect(String roomName, Location room) {
         connections.put(roomName, room);
@@ -71,7 +71,7 @@ public class Location {
 
     /**
      * Gets item from the room
-     * @param itemName
+     * @param itemName name of item
      * @return item
      */
     public Item getItem(String itemName) {

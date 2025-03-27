@@ -13,7 +13,7 @@ public class LoadMap {
 
     /**
      * Loading locations and setting connections from text file
-     * @param filename
+     * @param filename name of text file
      * @throws IOException
      */
     public void loadFromTxt(String filename) throws IOException {
@@ -49,7 +49,7 @@ public class LoadMap {
 
     /**
      * Loading items in their location from text file
-     * @param filename
+     * @param filename name of text file
      * @throws IOException
      */
     public void loadItemFromTxt(String filename) throws IOException {
@@ -106,7 +106,7 @@ public class LoadMap {
      * Loading npc in their location
      * Loading from text file
      *
-     * @param filename
+     * @param filename name of text file
      * @throws IOException
      */
     public void loadNPCFromTxt(String filename) throws IOException {

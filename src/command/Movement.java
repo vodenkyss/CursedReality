@@ -42,7 +42,7 @@ public class Movement implements Command {
             return newLocation;
         } else {
             System.out.println("Nemůžeš jít tímto směrem.");
-            return currentLocation; //
+            return currentLocation;
         }
     }
 
