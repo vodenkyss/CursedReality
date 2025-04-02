@@ -45,7 +45,7 @@ public class Use implements Command {
             for (Item item : currentLocation.getItems()){
                 if (!item.isVisible()){
                     item.setVisible(true);
-                    System.out.println(item.getName()+" byl(a) odemcen");
+                    System.out.println(item.getName()+" byl(a) odemčen");
                 }
             }
             return itemToUse.getUseActionResult();

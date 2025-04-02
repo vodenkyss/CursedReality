@@ -110,19 +110,19 @@ public class Movement implements Command {
 
 
         }catch(NullPointerException e){
-            System.out.println("Neco neni spravne inicializovano! "+ e.getMessage());
+            System.out.println("Něco není správně inicializováno! "+ e.getMessage());
 
         }catch (Exception e){
             System.out.println("Nastala chyba: "+e.getMessage());
         }
-        return "Co budes delat dal?";
+        return "Co budeš dělat dál?";
     }
 
     /**
      * Method for checking right food name.
      */
     private void checkFoodInProstreno() {
-        System.out.print("Zadej název jídla, které ti Karel uvařil: (pro pokracovani do mistnosti napis cokoli jineho) ");
+        System.out.print("Zadej název jídla, které ti Karel uvařil: (pro pokračování do místnosti napiš cokoli jiného) ");
         sc.nextLine();
         String foodName = sc.nextLine().trim();
 

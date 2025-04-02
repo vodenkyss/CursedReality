@@ -16,7 +16,7 @@ public class Text {
                 System.out.println(line);
             }
         } catch (IOException e) {
-            System.out.println("jejda neco se pokazilo");
+            System.out.println("jejda nco se pokazilo");
         }
 
     }

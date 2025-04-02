@@ -66,7 +66,7 @@ public class Console {
             }
 
         } else {
-            System.out.println(">> Cos to napsal? Zkus to znova..");
+            System.out.println(">> Co jsi to napsal? Zkus to znova..");
         }
     }
 
